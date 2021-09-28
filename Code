@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main()
+{
+    int number, guess, nGuesses = 1;
+    srand(time(0));
+    number = rand() % 100 + 1;
+    printf("guess a number from 1 to 100\n");
+
+    do
+    {
+        scanf("%d", &guess);
+        if (guess > number)
+        {
+            printf("Choose a lesser number\n");
+        }
+        else if (guess < number)
+        {
+            printf("Choose a bigger number\n");
+        }
+        else if (guess == number)
+        {
+            printf("You guessed  it right!! You took %d attempts", nGuesses);
+        }
+
+        nGuesses++;
+
+    } while (guess != number);
+
+    return 0;
+}
